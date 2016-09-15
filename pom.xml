@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.simpleframework</groupId>
+	<groupId>com.subshell.simpleframework</groupId>
 	<artifactId>simple-xml</artifactId>
 	<packaging>jar</packaging>
 	<version>2.8.0-SNAPSHOT</version>
@@ -16,9 +16,10 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>http://simple.svn.sourceforge.net/viewvc/simple/tags/simple-xml-2.7.1</url>
-		<developerConnection>scm:svn:https://simple.svn.sourceforge.net/svnroot/simple/tags/simple-xml-2.7.1</developerConnection>
-		<connection>scm:svn:https://simple.svn.sourceforge.net/svnroot/simple/tags/simple-xml-2.7.1</connection>
+		<url>https://github.com/subshell/simplexml</url>
+		<connection>scm:git:https://github.com/subshell/simplexml.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:subshell/simplexml.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 	<developers>
 		<developer>
@@ -26,12 +27,27 @@
 			<name>Niall Gallagher</name>
 			<email>niallg@users.sf.net</email>
 		</developer>
+		<developer>
+			<id>teetrinkers</id>
+			<name>Jens Theeß</name>
+			<url>https://github.com/teetrinkers</url>
+		</developer>
 	</developers>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<file.encoding>UTF-8</file.encoding>
 	</properties>
+	<distributionManagement>
+		<repository>
+			<id>artifactory.int.releases</id>
+			<url>http://artifactory.subshell.com/artifactory/libs-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>artifactory.int.snapshots</id>
+			<url>http://artifactory.subshell.com/artifactory/libs-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
