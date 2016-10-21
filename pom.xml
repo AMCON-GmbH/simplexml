@@ -18,7 +18,7 @@
 	<scm>
 		<url>https://github.com/subshell/simplexml</url>
 		<connection>scm:git:https://github.com/subshell/simplexml.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:subshell/simplexml.git</developerConnection>
+		<developerConnection>scm:git:ssh://git@github.com/subshell/simplexml.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<developers>
