@@ -23,6 +23,7 @@ import java.io.Reader;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
@@ -54,6 +55,15 @@ class DocumentProvider implements Provider {
    public DocumentProvider() {
       this.factory = DocumentBuilderFactory.newInstance();
       this.factory.setNamespaceAware(true);
+      //XXE fix
+      //NOTE: only jre7_u67+ and jre8_20+
+      this.factory.setXIncludeAware(false);
+      this.factory.setExpandEntityReferences(false);
+     
+      this.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+      this.setFeature("http://xml.org/sax/features/external-general-entities", false);
+      this.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+      this.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
    }
    
    /**
@@ -97,5 +107,13 @@ class DocumentProvider implements Provider {
       Document document = builder.parse(source);
       
       return new DocumentReader(document);   
+   }
+   
+   private void setFeature(String feature, boolean flag) {
+      try{
+         this.factory.setFeature(feature, flag);
+      }catch (ParserConfigurationException e){
+         //Unsuporrted
+      } 
    }
 }

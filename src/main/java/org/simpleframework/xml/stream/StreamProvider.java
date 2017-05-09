@@ -50,6 +50,9 @@ class StreamProvider implements Provider {
     */
    public StreamProvider() {
       this.factory = XMLInputFactory.newInstance();
+      //XXE fix
+      this.factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+      this.factory.setProperty("javax.xml.stream.isSupportingExternalEntities", false);
    }
 
    /**
