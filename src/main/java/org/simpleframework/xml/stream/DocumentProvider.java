@@ -110,10 +110,10 @@ class DocumentProvider implements Provider {
    }
    
    private void setFeature(String feature, boolean flag) {
-      try{
+      try {
          this.factory.setFeature(feature, flag);
-      }catch (ParserConfigurationException e){
-         //Unsuporrted
+      } catch (ParserConfigurationException e) {
+         //Unsupported
       } 
    }
 }
