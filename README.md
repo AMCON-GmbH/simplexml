@@ -1,14 +1,9 @@
 # SimpleXML
+Documentation on http://simple.sourceforge.net/
 
-This is an initial check in of code for the library hosted at http://simple.sourceforge.net. It contains quite a bit of rubbish, however the core is structured in a fairly standard manner where all source code and tests live under the src directory.
+## History
+* Made By ngallagher (https://github.com/ngallagher/simplexml)
+* Extended / Forked by subshell (https://github.com/subshell/simplexml)
 
-## Maven Central
-
-This fork is available on Maven Central:
-
-    <dependency>
-      <groupId>com.subshell.simpleframework</groupId>
-      <artifactId>simple-xml</artifactId>
-      <version>2.8.1</version>
-    </dependency>
-
+## What did we do?
+* Extended the pathparser to allow dots

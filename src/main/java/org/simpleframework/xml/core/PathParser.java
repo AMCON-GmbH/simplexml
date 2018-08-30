@@ -668,7 +668,7 @@ class PathParser implements Expression {
     * @return this returns true if the provided character is legal
     */
    private boolean isSpecial(char value) {
-      return value == '_' || value == '-' || value == ':';
+      return value == '_' || value == '-' || value == ':' || value == '.';
    }
    
    /**
